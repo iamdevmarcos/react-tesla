@@ -2,25 +2,39 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   .colored:nth-child(1) {
-    background: #f1ffe7;
+    background: url("assets/images/01.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(2) {
-    background: #dfffd9;
+    background: url("assets/images/02.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(3) {
-    background: #cdfeca;
+    background: url("assets/images/03.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(4) {
-    background: #bbfebb;
+    background: url("assets/images/04.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(5) {
-    background: #a9fdac;
+    background: url("assets/images/05.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(6) {
-    background: #90f29c;
+    background: url("assets/images/06.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .colored:nth-child(7) {
-    background: #77e68c;
+    background: url("assets/images/07.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 `;
 
