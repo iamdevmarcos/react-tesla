@@ -1,3 +1,4 @@
+import { useTransform } from "framer-motion";
 import React, { useCallback, useLayoutEffect, useState } from "react";
 
 import { CarModel } from "../ModelsContext";
@@ -25,13 +26,32 @@ const ModelOverlay: React.FC<Props> = ({ model, children }) => {
     getSectionDimensions()
   );
 
-  // useLayoutEffect(() => {
-  //   function onResize() {}
+  useLayoutEffect(() => {
+    function onResize() {
+      window.requestAnimationFrame(() => setDimensions(getSectionDimensions));
+    }
 
-  //   window.addEventListener();
-  // }, []);
+    window.addEventListener("resize", onResize);
 
-  return <Container>{children}</Container>;
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const sectionScrollProgress = useTransform(
+    scrollY,
+    (y) => (y - dimensions.offsetTop) / dimensions.offsetHeight
+  );
+
+  const opacity = useTransform(
+    sectionScrollProgress,
+    [-0.42, -0.05, 0.05, 0.42],
+    [0, 1, 1, 0]
+  );
+
+  const pointerEvents = useTransform(opacity, (value) =>
+    value > 0 ? "auto" : "none"
+  );
+
+  return <Container style={{ opacity }}>{children}</Container>;
 };
 
 export default ModelOverlay;
