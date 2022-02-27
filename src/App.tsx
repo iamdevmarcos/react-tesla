@@ -1,10 +1,11 @@
 import React from "react";
+import Page from "./components/Page";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 const App = () => {
   return (
     <>
-      <h1>React Tesla</h1>
+      <Page />
 
       <GlobalStyles />
     </>
