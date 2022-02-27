@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  height: 100vh;
 
-export const Heading = styled.div``;
-
-export const Buttons = styled.div``;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+`;
